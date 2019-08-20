@@ -3,3 +3,20 @@
 <div class="container">
     You can manage your todos <a routerLink="/todos"> HERE </a>
 </div>
+
+<div class="container">
+    Get Welcome message with ID:
+    <button (click)="getWelcomeMessage()" class="btn btn-success">Get welcome message</button>
+</div>
+<br/>
+<div class="container">
+        Get Welcome message with custom ID:
+        <input type="number" name="id" [(ngModel)]="id">
+        <button (click)="getWelcomeMessageById()" class="btn btn-success" style="margin-left:10px">Get welcome message with custom ID</button>
+</div>
+
+
+<div class="container" *ngIf="welcomeMessageFromService">
+    <H2>Your Customized Welcome message</H2>
+    {{welcomeMessageFromService}}
+</div>
